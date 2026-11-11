@@ -11,8 +11,6 @@ def generate_launch_description():
     plan_file_name = LaunchConfiguration('filename')
     fabric_config = LaunchConfiguration('fabric_config')
     capabilities_config = LaunchConfiguration('capabilities_config')
-    start_experience_stack = LaunchConfiguration('start_experience_stack')
-    experience_only = LaunchConfiguration('experience_only')
     start_prompt_tools = LaunchConfiguration('start_prompt_tools')
     start_launch_proxy = LaunchConfiguration('start_launch_proxy')
 
@@ -32,18 +30,6 @@ def generate_launch_description():
         'capabilities_config',
         default_value=PathJoinSubstitution([FindPackageShare('omron_amr_capabilities'), 'config', 'capabilities2_config.yaml']),
         description='Absolute path to the capabilities2 configuration file'
-    )
-
-    declare_start_experience_stack = DeclareLaunchArgument(
-        'start_experience_stack',
-        default_value='false',
-        description='Whether to start the experience and supervisor stack alongside fabric'
-    )
-
-    declare_experience_only = DeclareLaunchArgument(
-        'experience_only',
-        default_value='false',
-        description='Whether to rebuild CoreGraphRag through the Experience stack without starting fabric'
     )
 
     declare_start_prompt_tools = DeclareLaunchArgument(
@@ -67,8 +53,6 @@ def generate_launch_description():
             'plan_file_path': plan_file_path,
             'fabric_config': fabric_config,
             'capabilities_config': capabilities_config,
-            'start_experience_stack': start_experience_stack,
-            'experience_only': experience_only,
             'start_prompt_tools': start_prompt_tools,
             'start_launch_proxy': start_launch_proxy,
         }.items(),
@@ -78,8 +62,6 @@ def generate_launch_description():
         declare_plan_file_name,
         declare_fabric_config,
         declare_capabilities_config,
-        declare_start_experience_stack,
-        declare_experience_only,
         declare_start_prompt_tools,
         declare_start_launch_proxy,
         fabric
