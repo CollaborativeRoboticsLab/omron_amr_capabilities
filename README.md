@@ -16,6 +16,15 @@ source install/setup.bash
 
 Configure the robot connection and hardware parameters in `amr_ros/config/ld250_parameters.yaml` before building. See the [Omron AMR repository](https://github.com/CollaborativeRoboticsLab/omron_amr) for hardware setup and Nav2 details. The provider uses the launch defaults; to change SLAM or hardware parameters, edit [AMRNav2LaunchRunner.yaml](providers/AMRNav2LaunchRunner.yaml) and rebuild. Avoid running another `amr_core` or Nav2 instance for the same robot.
 
+## Capability inheritance
+
+```mermaid
+flowchart LR
+	N["nav2_capabilities<br/>Generic Nav2 interfaces"]
+	A["omron_amr_capabilities<br/>LD250 semantic interfaces and launch"]
+	N -->|"specializes"| A
+```
+
 ## Running Plans
 
 The examples contain illustrative map-frame coordinates, not verified routes for your environment. Before running any plan, configure the robot and Nav2 for the actual site, verify localization, laser scans and both costmaps, and check every waypoint and recovery path. Ensure exclusive control and supervise the robot with an accessible stop. Navigation does not automatically undock the robot; see the AMR documentation for the separate supervised undocking procedure.
