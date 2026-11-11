@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Plan>
+    <Control type="sequential" name="multi_point_navigation_with_recovery">
+        <Runner interface="omron_amr_capabilities/AMRWaypointRunner" provider="omron_amr_capabilities/AMRWaypointRunner" x="0.5" y="0.0" />
+        <Runner interface="omron_amr_capabilities/AMRWaypointRunner" provider="omron_amr_capabilities/AMRWaypointRunner" x="1.0" y="-0.5" />
+        <Runner interface="omron_amr_capabilities/AMRWaypointRunner" provider="omron_amr_capabilities/AMRWaypointRunner" x="1.0" y="1.5" />
+        <Runner interface="omron_amr_capabilities/AMRWaypointRunner" provider="omron_amr_capabilities/AMRWaypointRunner" x="1.5" y="2.0" />
+        <Control type="recovery" name="recovery_navigation">
+            <Runner interface="omron_amr_capabilities/AMRWaypointRunner" provider="omron_amr_capabilities/AMRWaypointRunner" x="0.0" y="0.5" />
+        </Control>
+        <Runner interface="omron_amr_capabilities/AMRWaypointRunner" provider="omron_amr_capabilities/AMRWaypointRunner" x="-1.5" y="0.0" />
+    </Control>
+</Plan>

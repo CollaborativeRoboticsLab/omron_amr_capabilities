@@ -1,0 +1,22 @@
+%YAML 1.1
+---
+name: AMRNav2LaunchRunner
+spec_type: provider
+spec_version: 1.2
+description: "Launches the LD250 hardware interface and Nav2."
+implements: nav2_capabilities/Nav2LaunchRunner
+runner: amr_ros/ld250.launch.py
+definition:
+  launch_parameters:
+    - key: use_rviz
+      value: "false"
+    - key: namespace
+      value: ""
+  launch_readiness:
+    lifecycle:
+      nodes: [planner_server, bt_navigator]
+      timeout_sec: 60.0
+    action:
+      name: navigate_to_pose
+      type: nav2_msgs/action/NavigateToPose
+      timeout: 60.0

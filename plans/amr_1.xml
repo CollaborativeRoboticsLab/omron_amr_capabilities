@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Plan>
+    <Control type="sequential" name="single_point_navigation">
+        <Runner interface="omron_amr_capabilities/AMRWaypointRunner" provider="omron_amr_capabilities/AMRWaypointRunner" x="1.0" y="-0.5" />
+    </Control>
+</Plan>

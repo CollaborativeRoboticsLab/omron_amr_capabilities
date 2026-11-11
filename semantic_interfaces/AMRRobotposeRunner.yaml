@@ -1,0 +1,7 @@
+%YAML 1.1
+---
+name: AMRRobotposeRunner
+spec_type: semantic_interface
+spec_version: 1.2
+description: "AMR semantic wrapper for the Nav2 robot pose capability using the default map, odom, and base_link frames."
+redefines: nav2_capabilities/RobotPoseRunner
