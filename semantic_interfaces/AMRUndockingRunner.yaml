@@ -1,0 +1,7 @@
+%YAML 1.1
+---
+name: AMRUndockingRunner
+spec_type: semantic_interface
+spec_version: 1.2
+description: "Undock an Omron AMR using its driver action server."
+redefines: nav2_capabilities/UndockingRunner

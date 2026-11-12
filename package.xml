@@ -41,6 +41,10 @@
       semantic_interfaces/AMRRobotposeRunner.yaml
     </semantic_capability_interface>
 
+    <semantic_capability_interface>
+      semantic_interfaces/AMRUndockingRunner.yaml
+    </semantic_capability_interface>
+
     <capability_provider>
       providers/AMRNav2LaunchRunner.yaml
     </capability_provider>
@@ -51,6 +55,10 @@
 
     <capability_provider>
       providers/AMRRobotposeRunner.yaml
+    </capability_provider>
+
+    <capability_provider>
+      providers/AMRUndockingRunner.yaml
     </capability_provider>
 
   </export>
